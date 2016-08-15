@@ -1,0 +1,26 @@
+set imap_user=nelio # 登録番号
+set imap_pass=hige@mos # パスワード
+set realname="Hiroki Watanabe" # 氏名
+#set from="taro@cc.nagoya-u.ac.jp" # aliase 登録してある場合
+set from="nelio@inl.ics.keio.ac.jp" # aliase 登録してない場合
+set hostname="inl.ics.keio.ac.jp"
+auto_view text/html
+#
+color normal green default
+#
+# pager
+color hdrdefault cyan default
+color header yellow default ^(From|Subject):
+color quoted cyan default
+color signature red default
+color attachment blue default
+color body magenta default "(ftp|http)://[^ ]+" # point out URLs
+color body magenta default [-a-z_0-9.]+@[-a-z_0-9.]+ # e-mail addresses
+color search black yellow # how to hilite search patterns in the pager
+
+ignore *
+unignore date from to cc replay-to subject
+hdr_order date from to cc replay-to subject
+
+bind index G imap-fetch-mail
+bind pager G imap-fetch-mail

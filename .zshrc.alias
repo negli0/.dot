@@ -1,0 +1,96 @@
+alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+alias la='ls -a'
+alias ll='ls -lh'
+alias lla='ls -alh'
+alias lal='ls -alh'
+alias ls='ls --color=auto'
+alias lll='ll'
+alias s='source ~/.zshrc'
+alias sshx='ssh -X '
+alias sky='curl wttr.in/'
+#alias labmail='ssh -L 9110:localhost:110 -L 9025:localhost:25 -L 8080:www.ny.ics.keio.ac.jp:80 nygwy'
+alias sshyg='ssh -X ua519021@logex00.educ.cc.keio.ac.jp'
+#$resp45='watanabe@resp45.ny.ics.keio.ac.jp'
+#alias julius='voice.sh'
+
+alias sys='system_profiler -detailLevel '
+#alias less='less '
+#alias acroread='/Applications/Adobe\ Acrobat\ Reader\ DC.app/Contents/MacOS/AdobeReader'
+
+alias rem='rm.sh'
+alias rm='rm -i'
+alias cp='cp -aip'
+alias mv='mv -i'
+alias less='less -S' 
+alias mkdir='mkdir -p'
+alias tl='tmux ls'
+alias tn='tmux new '
+alias ta='tmux a '
+alias tk='tmux kill-session '
+alias tmuxl='tmux ls'
+alias tmuxn='tmux new '
+alias tmuxa='tmux a '
+alias tmuxk='tmux kill-session '
+alias e='exit'
+alias ctags='/usr/local/bin/ctags'
+alias date1='date +%y%m%d'
+alias dadir='mkdir `date1`'
+alias dot='cd $HOME/.dot/; ls -a'
+alias jobs='jobs -l'
+alias 8ping='ping -c 8'
+alias cdd='cd ..'
+alias cddd='cd ../../'
+alias cdddd='cd ../../../'
+alias cddddd='cd ../../../../'
+alias nkfg='nkf -g'
+
+# japaneese alias
+alias えるえす='ls'
+alias えるえる='ll'
+alias えるえー='la'
+alias すどぅ='sudo '
+alias すどぅー='sudo '
+alias れす='less'
+alias もあ='more'
+alias ぐれっぷ='grep'
+alias そーと='sort'
+alias へっど='head'
+alias えすえすえいち='ssh'
+alias えこー='echo'
+alias びむ='vim'
+alias そーす='source '
+alias きゃっと='cat'
+
+
+# sudo の後のコマンドでエイリアスを有効にする
+alias sudo='sudo '
+
+# グローバルエイリアス
+alias -g L='| less'
+alias -g G='| grep'
+
+# C で標準出力をクリップボードにコピーする
+# mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
+if which pbcopy >/dev/null 2>&1 ; then
+# Mac
+alias -g C='| pbcopy'
+elif which xsel >/dev/null 2>&1 ; then
+# Linux
+alias -g C='| xsel --input --clipboard'
+elif which putclip >/dev/null 2>&1 ; then
+# Cygwin
+alias -g C='| putclip'
+fi
+
+# OS 別の設定
+case ${OSTYPE} in
+darwin*)
+#Mac用の設定
+export CLICOLOR=1
+alias ls='ls -G -F'
+;;
+linux*)
+#Linux用の設定
+alias ls='ls -F --color=auto'
+;;
+esac
