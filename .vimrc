@@ -112,6 +112,8 @@ NeoBundleLazy "davidhalter/jedi-vim", {
 
 NeoBundle 'vitalk/vim-shebang'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'awk.vim'
+NeoBundle 'fatih/vim-go'
 " 代入 スコープ: 変数名   = 値
 " " let  g:     synta..  = ['pyflakes']
  let g:syntastic_python_checkers = ['pyflakes']
@@ -138,3 +140,8 @@ hi Comment ctermfg=darkgray
 hi Visual ctermbg=black
 
 filetype plugin indent on
+
+
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>

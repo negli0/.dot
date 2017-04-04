@@ -151,3 +151,12 @@ export LD_LIBRARY_PATH
 unset TCL_LIBRARY
 TCL_LIBRARY=Users/hiroki/opt/ns-install-osx/ns-allinone-2.35/tcl8.5.10/library
 export TCL_LIBRARY
+unset PYENV_ROOT
+PYENV_ROOT=$HOME/.pyenv
+export PYENV_ROOT
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
+
+unset GOPATH
+GOPATH=$HOME/go
+export GOPATH
