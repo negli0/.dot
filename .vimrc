@@ -3,7 +3,7 @@
 """"""""""""""""""""""""""""""""""""""""""""
 set laststatus=2
 set enc=utf-8
-set fencs=iso-2022-jp,utf-8,euc-jp,sjis
+set fencs=utf-8,iso-2022-jp,euc-jp,sjis
 
 set ts=4
 set sw=4
@@ -94,21 +94,21 @@ NeoBundleLazy 'thinca/vim-quickrun', {
 	nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 	" }}}
 " Python
-NeoBundleLazy "davidhalter/jedi-vim", {
-  \ "autoload": {
-    \   "filetypes": ["python", "python3", "djangohtml"],
-    \ },
-  \ "build" : {
-    \   "mac"  : "pip install jedi",
-    \   "unix" : "pip install jedi",
-    \ }}
-	" jedi-vim {{{
-	let g:jedi#rename_command = '<Leader>R'
-	let g:jedi#goto_assignments_command = '<Leader>G'
-	autocmd FileType python setlocal omnifunc=jedi#completions
-	let g:jedi#completions_enabled = 0
-	let g:jedi#auto_vim_configuration = 0
-	" }}}
+"NeoBundleLazy "davidhalter/jedi-vim", {
+"  \ "autoload": {
+"    \   "filetypes": ["python", "python3", "djangohtml"],
+"    \ },
+"  \ "build" : {
+"    \   "mac"  : "pip install jedi",
+"    \   "unix" : "pip install jedi",
+"    \ }}
+"	" jedi-vim {{{
+"	let g:jedi#rename_command = '<Leader>R'
+"	let g:jedi#goto_assignments_command = '<Leader>G'
+"	autocmd FileType python setlocal omnifunc=jedi#completions
+"	let g:jedi#completions_enabled = 0
+"	let g:jedi#auto_vim_configuration = 0
+"	" }}}
 
 NeoBundle 'vitalk/vim-shebang'
 NeoBundle 'scrooloose/syntastic'
@@ -145,3 +145,9 @@ filetype plugin indent on
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
+
+"" python determination
+augroup SetShebang
+	autocmd! SetShebang
+	autocmd BufNewFile *.py 0put =\"#! /usr/bin/env python\n# -*- coding: utf-8 -*-\n\n# \" .expand('%') .\"\n# nelio\"|$
+augroup END
