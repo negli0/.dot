@@ -17,6 +17,8 @@ alias sys='system_profiler -detailLevel '
 #alias less='less '
 #alias acroread='/Applications/Adobe\ Acrobat\ Reader\ DC.app/Contents/MacOS/AdobeReader'
 
+alias gsed='/usr/local/opt/gnu-sed/libexec/gnubin/sed'
+
 alias rem='rm.sh'
 alias rm='rm -i'
 alias cp='cp -aip'
