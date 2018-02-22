@@ -161,3 +161,12 @@ eval "$(pyenv init -)"
 unset GOPATH
 GOPATH=$HOME/go
 export GOPATH
+
+## brew config
+export HOMEBREW_VERBOSE=1
+export HOMEBREW_CURL_VERBOSE=1
+export HOMEBREW_MAKE_JOBS=5
+export HOMEBREW_EDITOR="/usr/local/bin/vim"
+export HOMEBREW_LOGS="/usr/local/var/homebrew/log/"
+export XDG_CONFIG_HOME="$HOME/.config"
+export TERM=xterm-color256

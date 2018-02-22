@@ -1,3 +1,5 @@
+alias pi='ssh -X pi'
+alias gcv='gcvgcv'
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
 alias la='ls -a'
 alias ll='ls -lh'
@@ -96,3 +98,7 @@ linux*)
 alias ls='ls -F --color=auto'
 ;;
 esac
+
+function gcvgcv() {
+	g++ -ggdb `pkg-config --cflags opencv` $@ `pkg-config --libs opencv`
+}
