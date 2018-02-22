@@ -169,4 +169,4 @@ export HOMEBREW_MAKE_JOBS=5
 export HOMEBREW_EDITOR="/usr/local/bin/vim"
 export HOMEBREW_LOGS="/usr/local/var/homebrew/log/"
 export XDG_CONFIG_HOME="$HOME/.config"
-export TERM=xterm-color256
+export TERM='xterm-256color'
