@@ -137,11 +137,7 @@ source $HOME/.zshrc.alias
 # PATH
 unset PATH
 PATH=/Users/hiroki/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/texbin:/opt/X11/bin
-#PATH=$PATH:$HOME/work/phase0/phase0_2014.03.01/bin
-#PATH=$PATH:/usr/local/share/ghostscript/9.16/lib
-PATH=$PATH:/Users/hiroki/opt/ns-install-osx/ns-allinone-2.35/bin:
-PATH=$PATH:/Users/hiroki/opt/ns-install-osx/ns-allinone-2.35/tcl8.5.10/unix:
-PATH=$PATH:/Users/hiroki/opt/ns-install-osx/ns-allinone-2.35/tk8.5.10/unix
+PATH=$PATH:/Library/TeX/texbin
 export PATH
 
 unset LD_LIBRARY_PATH
@@ -160,7 +156,9 @@ eval "$(pyenv init -)"
 
 unset GOPATH
 GOPATH=$HOME/go
+PATH=$PATH:/$GOPATH/bin
 export GOPATH
+export PATH
 
 ## brew config
 export HOMEBREW_VERBOSE=1

@@ -47,6 +47,8 @@ alias cddd='cd ../../'
 alias cdddd='cd ../../../'
 alias cddddd='cd ../../../../'
 alias nkfg='nkf -g'
+alias code='open . -a Visual\ Studio\ Code'
+
 
 # japaneese alias
 alias えるえす='ls'
