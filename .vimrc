@@ -151,3 +151,4 @@ augroup SetShebang
 	autocmd! SetShebang
 	autocmd BufNewFile *.py 0put =\"#! /usr/bin/env python\n# -*- coding: utf-8 -*-\n\n# \" .expand('%') .\"\n# nelio\"|$
 augroup END
+set rtp+=/usr/local/opt/fzf
