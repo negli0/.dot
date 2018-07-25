@@ -110,6 +110,7 @@ NeoBundleLazy 'thinca/vim-quickrun', {
 "	let g:jedi#auto_vim_configuration = 0
 "	" }}}
 
+NeoBundle 'cespare/vim-toml'
 NeoBundle 'vitalk/vim-shebang'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'awk.vim'

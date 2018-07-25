@@ -137,9 +137,7 @@ source $HOME/.zshrc.alias
 # PATH
 unset PATH
 PATH=/Users/hiroki/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/texbin:/opt/X11/bin
-#PATH=$PATH:$HOME/work/phase0/phase0_2014.03.01/bin
-#PATH=$PATH:/usr/local/share/ghostscript/9.16/lib
-PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:/Library/TeX/texbin
 export PATH
 
 unset LD_LIBRARY_PATH
@@ -158,7 +156,10 @@ eval "$(pyenv init -)"
 
 unset GOPATH
 GOPATH=$HOME/go
+PATH=$PATH:/$GOPATH/bin
+PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH
+export PATH
 
 ## brew config
 export HOMEBREW_VERBOSE=1
@@ -168,4 +169,3 @@ export HOMEBREW_EDITOR="/usr/local/bin/vim"
 export HOMEBREW_LOGS="/usr/local/var/homebrew/log/"
 export XDG_CONFIG_HOME="$HOME/.config"
 export TERM='xterm-256color'
-PATH=$PATH:/usr/local/opt/go/libexec/bin
