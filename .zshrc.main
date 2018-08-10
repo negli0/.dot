@@ -157,6 +157,7 @@ eval "$(pyenv init -)"
 unset GOPATH
 GOPATH=$HOME/go
 PATH=$PATH:/$GOPATH/bin
+PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH
 export PATH
 

@@ -154,3 +154,4 @@ au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu,preview
 au FileType go compiler go
 " }}}
 
+set rtp+=/usr/local/opt/fzf
