@@ -54,22 +54,6 @@ let g:neobundle_default_git_protocol='https'
 NeoBundleFetch 'Shougo/neobundle.vim'
 " $B"-$3$s$J46$8$,4pK\$N=q$-J}(B
 NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'Shougo/vimproc', {
-	\ 'build' : {
-    \     'windows' : 'make -f make_mingw32.mak',
-	\     'cygwin' : 'make -f make_cygwin.mak',
-	\     'mac' : 'make -f make_mac.mak',
-	\     'unix' : 'make -f make_unix.mak',
-	\    },
-	\ }
-NeoBundleLazy 'Shougo/vimshell', {
-	\ 'depends' : 'Shougo/vimproc',
-	\ 'autoload' : {
-	\   'commands' : [{ 'name' : 'VimShell', 'complete' : 'customlist,vimshell#complete'},
-	\                 'VimShellExecute', 'VimShellInteractive',
-	\                 'VimShellTerminal', 'VimShellPop'],
-	\   'mappings' : ['<Plug>(vimshell_switch)']
-	\ }}
 
 " vimshell {{{
 	nmap <silent> vs :<C-u>VimShell<CR>
@@ -102,13 +86,6 @@ NeoBundleLazy 'thinca/vim-quickrun', {
 "    \   "mac"  : "pip install jedi",
 "    \   "unix" : "pip install jedi",
 "    \ }}
-"	" jedi-vim {{{
-"	let g:jedi#rename_command = '<Leader>R'
-"	let g:jedi#goto_assignments_command = '<Leader>G'
-"	autocmd FileType python setlocal omnifunc=jedi#completions
-"	let g:jedi#completions_enabled = 0
-"	let g:jedi#auto_vim_configuration = 0
-"	" }}}
 
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'vitalk/vim-shebang'
@@ -121,6 +98,15 @@ NeoBundle 'fatih/vim-go'
 " " g ... Global, l ... Local
 "
 
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
+NeoBundle 'dgryski/vim-godef'
+NeoBundle 'vim-jp/vim-go-extra'
+
+set rtp^=$GOPATH/src/github.com/nsf/gocode/vim
 
 " vimrc $B$K5-=R$5$l$?%W%i%0%$%s$G%$%s%9%H!<%k$5$l$F$$$J$$$b$N$,$J$$$+%A%'%C%/$9$k(B
 	NeoBundleCheck
@@ -140,6 +126,12 @@ hi LineNr  ctermfg=darkgray
 hi Comment ctermfg=darkgray
 hi Visual ctermbg=black
 
+" vimdiffの色設定
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
+
 filetype plugin indent on
 
 
@@ -152,3 +144,13 @@ augroup SetShebang
 	autocmd! SetShebang
 	autocmd BufNewFile *.py 0put =\"#! /usr/bin/env python\n# -*- coding: utf-8 -*-\n\n# \" .expand('%') .\"\n# nelio\"|$
 augroup END
+
+
+" for golang {{{
+set path+=$GOPATH/src/**
+let g:gofmt_command = 'goimports'
+au BufWritePre *.go Fmt
+au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu,preview
+au FileType go compiler go
+" }}}
+
